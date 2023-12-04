@@ -23,11 +23,8 @@ jobs:
         with:
           path: ./baserepo/node_modules/.cache/nx
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('yarn.lock') }}
-      - name: ls -la
-        run: ls -la
       - name: npm install and test 
         working-directory: ./baserepo
         run: |
-          ls -la
           yarn install
           yarn setup
