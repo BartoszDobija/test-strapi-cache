@@ -22,7 +22,7 @@ jobs:
           cache-name: cache-nx
         with:
           path: ~/baserepo/node_modules/.cache/nx
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('yarn.lock') }}
       - name: npm install and test 
         working-directory: ./baserepo
         run: |
