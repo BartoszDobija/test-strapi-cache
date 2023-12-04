@@ -16,6 +16,11 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 18.15.0
+      - name: Cache node modules
+        uses: actions/cache@v3
+        with:
+          path: ./baserepo/node_modules
+          key: cache-node-modules-${{ hashFiles('yarn.lock') }}
       - name: Cache
         uses: actions/cache@v3
         env:
