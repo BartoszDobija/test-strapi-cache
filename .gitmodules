@@ -1,0 +1,3 @@
+[submodule "baserepo"]
+	path = baserepo
+	url = https://github.com/strapi/strapi.git

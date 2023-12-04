@@ -11,12 +11,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+        with:
+          submodules: recursive
       - uses: actions/setup-node@v4
         with:
           node-version: 18.15.0
       - name: test
         run: ls -la
       - name: npm install and test 
+        working-directory: ./baserepo
         run: |
           yarn install
           yarn setup
